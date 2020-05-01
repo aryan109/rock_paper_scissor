@@ -2,10 +2,12 @@ from tkinter import *
 
 master = Tk()
 master.title('Rock Paper Scissor')
-canvas_height = 600
-canvas_width = 400
-w = Canvas(master, width=canvas_width, height=canvas_height)
-w.pack()
-y = int(canvas_height / 2)
-w.create_line(0, y, canvas_width, y)
+master.geometry('300x300')
+heading_frame = Frame(master)
+text = Text(heading_frame)
+text.insert(INSERT, "Welcome to rock paper scissor")
+heading_frame.pack()
+
+text.pack()
+
 mainloop()
