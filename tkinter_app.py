@@ -14,7 +14,13 @@ L1.grid(row=0, column=0)
 E1 = Entry(user_entry_frame, bd=5)
 E1.grid(row=0, column=1)
 
-submit_button = Button(user_entry_frame, text="submit", state=DISABLED)
+
+def submit_name():
+    label = Label(user_entry_frame, text='Hi')
+    label.grid(row=1)
+
+
+submit_button = Button(user_entry_frame, text="submit", command=submit_name)
 submit_button.grid(row=0, column=2)
 
 user_entry_frame.grid(row=1, column=0)
