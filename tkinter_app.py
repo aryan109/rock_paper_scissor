@@ -17,7 +17,7 @@ E1.grid(row=0, column=1)
 
 def submit_name():
     name = E1.get()
-    label = Label(master, text='Hi {}, let\'start the game!!!'.format(name))
+    label = Label(master, text="Hi {}, let's start the game!!!".format(name))
     label.grid(row=2)
 
 
