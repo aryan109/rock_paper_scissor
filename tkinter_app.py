@@ -4,17 +4,16 @@ master = Tk()
 master.title('Rock Paper Scissor')
 master.geometry('600x600')
 
-heading_frame = Frame(master)
-heading_frame.pack(side=TOP)
+text = Label(master, text="Welcome to rock paper scissor", font=('Comic Sans MS', 30))
+text.grid(row=0)
 
-text = Label(heading_frame, text="Welcome to rock paper scissor", font=('Comic Sans MS', 30))
-text.pack()
+user_entry_frame = Frame(master)
+L1 = Label(user_entry_frame, text="Enter Name")
+L1.grid(row=0, column=0)
 
-username_frame = Frame(master)
-L1 = Label(username_frame, text="User Name")
-L1.pack(side=LEFT)
-E1 = Entry(username_frame, bd=5)
-E1.pack(side=LEFT)
-username_frame.pack(side=LEFT)
+E1 = Entry(user_entry_frame, bd=5)
+E1.grid(row=0, column=1)
+
+user_entry_frame.grid(row=1, column=0)
 
 mainloop()
