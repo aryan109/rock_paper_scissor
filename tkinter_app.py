@@ -16,8 +16,9 @@ E1.grid(row=0, column=1)
 
 
 def submit_name():
-    label = Label(user_entry_frame, text='Hi')
-    label.grid(row=1)
+    name = E1.get()
+    label = Label(master, text='Hi {}, let\'start the game!!!'.format(name))
+    label.grid(row=2)
 
 
 submit_button = Button(user_entry_frame, text="submit", command=submit_name)
