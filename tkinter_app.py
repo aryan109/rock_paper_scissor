@@ -26,4 +26,15 @@ submit_button.grid(row=0, column=2)
 
 user_entry_frame.grid(row=1, column=0)
 
+game_button_frame = Frame(master)
+rock_button = Button(game_button_frame, text='ROCK', state=DISABLED)
+rock_button.pack()
+rock_button = Button(game_button_frame, text='PAPER', state=DISABLED)
+rock_button.pack()
+rock_button = Button(game_button_frame, text='SCISSOR', state=DISABLED)
+rock_button.pack()
+rock_button = Button(game_button_frame, text='STOP', state=DISABLED)
+rock_button.pack()
+game_button_frame.grid(row=6, column=0)
+
 mainloop()
