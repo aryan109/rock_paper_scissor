@@ -15,12 +15,11 @@ L1.grid(row=0, column=0)
 E1 = Entry(user_entry_frame, bd=5)
 E1.grid(row=0, column=1)
 
-
 player_score = 0
 computer_score = 0
 computer_choice = 0
 player_choice = 0
-flag = 0
+flag = 1
 
 
 def set_rock():
@@ -28,6 +27,7 @@ def set_rock():
     if flag == 1:
         player_choice = 'rock'
         start_game()
+    return
 
 
 def set_paper():
@@ -35,6 +35,7 @@ def set_paper():
     if flag == 1:
         player_choice = 'paper'
         start_game()
+    return
 
 
 def set_scissor():
@@ -42,6 +43,7 @@ def set_scissor():
     if flag == 1:
         player_choice = 'scissor'
         start_game()
+    return
 
 
 def start_game():
@@ -59,6 +61,7 @@ def start_game():
     else:
         print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
         computer_score += 1
+    return
 
 
 def submit_name():
@@ -73,11 +76,11 @@ submit_button.grid(row=0, column=2)
 
 user_entry_frame.grid(row=1, column=0)
 game_button_frame = Frame(master)
-rock_button = Button(game_button_frame, text='ROCK', state=set_rock())
+rock_button = Button(game_button_frame, text='ROCK', command=set_rock)
 rock_button.pack(side=LEFT)
-rock_button = Button(game_button_frame, text='PAPER', state=set_paper())
+rock_button = Button(game_button_frame, text='PAPER', command=set_paper)
 rock_button.pack(side=LEFT)
-rock_button = Button(game_button_frame, text='SCISSOR', state=set_scissor())
+rock_button = Button(game_button_frame, text='SCISSOR', command=set_scissor)
 rock_button.pack(side=LEFT)
 game_button_frame.grid(row=3, column=0)
 
