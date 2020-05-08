@@ -1,4 +1,5 @@
 from tkinter import *
+import random
 
 master = Tk()
 master.title('Rock Paper Scissor')
@@ -34,6 +35,22 @@ def set_paper():
 def set_scissor():
     global player_choice
     player_choice = 0
+
+
+def start_game():
+    global computer_choice, computer_score, player_choice, player_score
+    computer_choice = random.choice(options)
+    pi = options.index(player_choice)
+    ci = options.index(computer_choice)
+    diff = pi - ci
+    if diff is 0:
+        print('Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice))
+    elif pi is (ci + 1) % 3:
+        print('Congratulations, you won computer chose {} you chose {}'.format(computer_choice, player_choice))
+        player_score += 1
+    else:
+        print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
+        computer_score += 1
 
 
 def submit_name():
