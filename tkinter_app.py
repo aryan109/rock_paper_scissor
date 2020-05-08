@@ -21,6 +21,10 @@ computer_choice = 0
 player_choice = 0
 flag = 1
 
+step_result = "step_result"
+res_label = Label(master, text=step_result)
+res_label.grid(row=5)
+
 
 def set_rock():
     global player_choice, flag
@@ -47,7 +51,7 @@ def set_scissor():
 
 
 def start_game():
-    global computer_choice, computer_score, player_choice, player_score
+    global computer_choice, computer_score, player_choice, player_score, res_label, step_result
     options = ('rock', 'paper', 'scissor')
     computer_choice = random.choice(options)
     pi = options.index(player_choice)
@@ -55,12 +59,17 @@ def start_game():
     diff = pi - ci
     if diff is 0:
         print('Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice))
+        step_result = 'Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice)
+
     elif pi is (ci + 1) % 3:
         print('Congratulations, you won computer chose {} you chose {}'.format(computer_choice, player_choice))
+        step_result = 'Congratulations, you won computer chose {} you chose {}'.format(computer_choice, player_choice)
         player_score += 1
     else:
         print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
+        step_result = 'Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice)
         computer_score += 1
+    res_label.config(text=step_result)
     return
 
 
