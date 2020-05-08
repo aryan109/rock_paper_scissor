@@ -14,11 +14,33 @@ L1.grid(row=0, column=0)
 E1 = Entry(user_entry_frame, bd=5)
 E1.grid(row=0, column=1)
 
+options = ('rock', 'paper', 'scissor')
+player_score = 0
+computer_score = 0
+computer_choice = 0
+player_choice = 0
+
+
+def set_rock():
+    global player_choice
+    player_choice = 0
+
+
+def set_paper():
+    global player_choice
+    player_choice = 0
+
+
+def set_scissor():
+    global player_choice
+    player_choice = 0
+
 
 def submit_name():
     name = E1.get()
     label = Label(master, text="Hi {}, let's start the game!!!".format(name))
     label.grid(row=2)
+    global options, player_score, computer_score
 
 
 submit_button = Button(user_entry_frame, text="submit", command=submit_name)
