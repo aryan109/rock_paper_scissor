@@ -58,7 +58,7 @@ def start_game():
     ci = options.index(computer_choice)
     diff = pi - ci
     if diff is 0:
-        print('Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice))
+        print('Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice))  # fixme remove print
         step_result = 'Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice)
 
     elif pi is (ci + 1) % 3:
