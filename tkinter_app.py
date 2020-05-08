@@ -15,30 +15,38 @@ L1.grid(row=0, column=0)
 E1 = Entry(user_entry_frame, bd=5)
 E1.grid(row=0, column=1)
 
-options = ('rock', 'paper', 'scissor')
+
 player_score = 0
 computer_score = 0
 computer_choice = 0
 player_choice = 0
+flag = 0
 
 
 def set_rock():
-    global player_choice
-    player_choice = 0
+    global player_choice, flag
+    if flag == 1:
+        player_choice = 'rock'
+        start_game()
 
 
 def set_paper():
-    global player_choice
-    player_choice = 1
+    global player_choice, flag
+    if flag == 1:
+        player_choice = 'paper'
+        start_game()
 
 
 def set_scissor():
-    global player_choice
-    player_choice = 2
+    global player_choice, flag
+    if flag == 1:
+        player_choice = 'scissor'
+        start_game()
 
 
 def start_game():
     global computer_choice, computer_score, player_choice, player_score
+    options = ('rock', 'paper', 'scissor')
     computer_choice = random.choice(options)
     pi = options.index(player_choice)
     ci = options.index(computer_choice)
@@ -64,7 +72,6 @@ submit_button = Button(user_entry_frame, text="submit", command=submit_name)
 submit_button.grid(row=0, column=2)
 
 user_entry_frame.grid(row=1, column=0)
-
 game_button_frame = Frame(master)
 rock_button = Button(game_button_frame, text='ROCK', state=set_rock())
 rock_button.pack(side=LEFT)
