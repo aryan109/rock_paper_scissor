@@ -29,12 +29,12 @@ def set_rock():
 
 def set_paper():
     global player_choice
-    player_choice = 0
+    player_choice = 1
 
 
 def set_scissor():
     global player_choice
-    player_choice = 0
+    player_choice = 2
 
 
 def start_game():
