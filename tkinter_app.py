@@ -69,7 +69,7 @@ def start_game():
         print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
         step_result = 'Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice)
         computer_score += 1
-    # print(f'computer score{computer_score}, player score{player_score}')
+    print(f'computer score{computer_score}, player score{player_score}')
     res_label.config(text=step_result)
     return
 
