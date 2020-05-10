@@ -69,8 +69,20 @@ def start_game():
         print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
         step_result = 'Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice)
         computer_score += 1
+    # print(f'computer score{computer_score}, player score{player_score}')
     res_label.config(text=step_result)
     return
+
+
+def end_game():
+    global computer_score, player_score, res_label
+    if player_score > computer_score:
+        print('Congratulations, you are a champion')
+        # res_label = 'Congratulations, you are a champion'
+    elif player_score == computer_score:
+        print('Draw.')
+    else:
+        print('Booo, you lost')
 
 
 def submit_name():
@@ -93,6 +105,6 @@ rock_button = Button(game_button_frame, text='SCISSOR', command=set_scissor)
 rock_button.pack(side=LEFT)
 game_button_frame.grid(row=3, column=0)
 
-rock_button = Button(master, text='STOP', state=DISABLED)
+rock_button = Button(master, text='STOP', command=end_game)
 rock_button.grid(row=4)
 mainloop()
