@@ -78,11 +78,14 @@ def end_game():
     global computer_score, player_score, res_label
     if player_score > computer_score:
         print('Congratulations, you are a champion')
-        # res_label = 'Congratulations, you are a champion'
+        result_statement = 'Congratulations, you are a champion'
     elif player_score == computer_score:
         print('Draw.')
+        result_statement = 'Draw.'
     else:
         print('Booo, you lost')
+        result_statement = 'Booo, you lost'
+    res_label.config(text=result_statement)
 
 
 def submit_name():
@@ -105,6 +108,6 @@ rock_button = Button(game_button_frame, text='SCISSOR', command=set_scissor)
 rock_button.pack(side=LEFT)
 game_button_frame.grid(row=3, column=0)
 
-rock_button = Button(master, text='STOP', command=end_game)
+rock_button = Button(master, text='Result', command=end_game)
 rock_button.grid(row=4)
 mainloop()
