@@ -58,18 +58,18 @@ def start_game():
     ci = options.index(computer_choice)
     diff = pi - ci
     if diff is 0:
-        print('Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice))  # fixme remove print
+        # print('Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice))  # fixme remove print
         step_result = 'Draw, computer chose {} and you chose {}'.format(computer_choice, player_choice)
 
     elif pi is (ci + 1) % 3:
-        print('Congratulations, you won computer chose {} you chose {}'.format(computer_choice, player_choice))
+        # print('Congratulations, you won computer chose {} you chose {}'.format(computer_choice, player_choice))
         step_result = 'Congratulations, you won computer chose {} you chose {}'.format(computer_choice, player_choice)
         player_score += 1
     else:
-        print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
+        # print('Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice))
         step_result = 'Sorry, you lost computer chose {} you chose {}'.format(computer_choice, player_choice)
         computer_score += 1
-    print(f'computer score{computer_score}, player score{player_score}')
+    # print(f'computer score{computer_score}, player score{player_score}')
     res_label.config(text=step_result)
     return
 
@@ -78,13 +78,13 @@ def end_game():
     global computer_score, player_score, res_label
     player_name = E1.get()
     if player_score > computer_score:
-        print(f'Congratulations {player_name}, you are a champion')
+        # print(f'Congratulations {player_name}, you are a champion')
         result_statement = 'Congratulations {}, you are a champion'.format(player_name)
     elif player_score == computer_score:
-        print('Draw.')
+        # print('Draw.')
         result_statement = 'Draw.'
     else:
-        print('Booo , you lost')
+        # print('Booo , you lost')
         result_statement = 'Booo {}, you lost'.format(player_name)
     result_statement = result_statement + '\n{}\'s score is {}\ncomputer\'s score is {}'.format(player_name,
                                                                                                 player_score,
