@@ -76,15 +76,20 @@ def start_game():
 
 def end_game():
     global computer_score, player_score, res_label
+    player_name = E1.get()
     if player_score > computer_score:
-        print('Congratulations, you are a champion')
-        result_statement = 'Congratulations, you are a champion'
+        print(f'Congratulations {player_name}, you are a champion')
+        result_statement = 'Congratulations {}, you are a champion'.format(player_name)
     elif player_score == computer_score:
         print('Draw.')
         result_statement = 'Draw.'
     else:
-        print('Booo, you lost')
-        result_statement = 'Booo, you lost'
+        print('Booo , you lost')
+        result_statement = 'Booo {}, you lost'.format(player_name)
+    result_statement = result_statement + '\n{}\'s score is {}\ncomputer\'s score is {}'.format(player_name,
+                                                                                                player_score,
+                                                                                                computer_score)
+
     res_label.config(text=result_statement)
 
 
